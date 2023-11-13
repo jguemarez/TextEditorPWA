@@ -1,14 +1,14 @@
 {
-    "name": "JATE",
+    "name": "jate-pwa-server",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
     "scripts": {
         "server": "nodemon server.js --ignore client"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": ["server-side", "dependencies", "devDependencies","text", "editor", "coding", "JavaScript", "installable", "PWA"],
+    "author": "Jonathan Maldonado Guemarez",
+    "license": "MIT",
     "dependencies": {
         "express": "^4.17.1"
     },
