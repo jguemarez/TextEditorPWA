@@ -1,6 +1,11 @@
 {
   "env": {
     "browser": true
+  },  
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "rules": {
     // Override our default settings just for this directory
