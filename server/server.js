@@ -1,12 +1,12 @@
 const express = require('express');
-
+const htmlRouter = require('./routes/htmlRoutes');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('../client/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//Turning on the router for the html routes by using middleware
+app.use(htmlRouter);
 
-require('./routes/htmlRoutes')(app);
-
-app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
+app.listen(port, () => console.log(`Now listening on port: ${port}`));
