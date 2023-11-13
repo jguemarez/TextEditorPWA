@@ -16,7 +16,7 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    plugins:  [
+    plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "J.A.T.E",
@@ -27,6 +27,9 @@ module.exports = () => {
       }),
       new WebpackPwaManifest({
         fingerprints: false,
+        inject: true,
+        orientation: 'portrait',
+        display: 'standalone',
         name: "Just Another Text Editor",
         short_name: "J.A.T.E",
         description: "Takes notes with JavaScript syntax highlighting!",
@@ -39,6 +42,11 @@ module.exports = () => {
             src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
+          },
+          {
+            src: path.resolve("favicon.ico"),
+            sizes: [16, 32, 48],
+            destination: path.join("assets", "favicon"),
           },
         ],
       }),
@@ -62,6 +70,11 @@ module.exports = () => {
           },
         },
       ],
+    },
+    devServer: {
+      client: {
+        overlay: false,
+      },
     },
   };
 };
